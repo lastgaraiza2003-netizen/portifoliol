@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Last Garaiza | Portfolio</title>
+
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e2e8f0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #94a3b8;
+    }
+
+    nav {
+      text-align: center;
+      background: #020617;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #38bdf8;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #38bdf8;
+      border-bottom: 2px solid #38bdf8;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, opacity 0.5s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    button {
+      background: #38bdf8;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Last Garaiza</h1>
+  <p>Electronics & Communication Engineering Student</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am an Electronics and Communication Engineering student at Manav Rachna International Institute of Research and Studies. 
+    I have strong programming skills in C++, Java, Python, and MATLAB, along with hands-on experience in embedded systems and microcontrollers. 
+    I enjoy building innovative and practical solutions to real-world engineering problems.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <ul>
+      <li>C++</li>
+      <li>Java</li>
+      <li>Python</li>
+      <li>MATLAB</li>
+      <li>Arduino Uno</li>
+      <li>ESP32</li>
+      <li>Raspberry Pi Pico</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <h3>Automatic Solar Tracker System</h3>
+    <p>Developed a system that automatically tracks sunlight to maximize solar panel efficiency using sensors and microcontrollers.</p>
+  </div>
+  <div class="card">
+    <h3>Smart Energy Meter</h3>
+    <p>Built an IoT-based energy monitoring system using ESP32 for real-time electricity usage tracking and analysis.</p>
+  </div>
+  <div class="card">
+    <h3>Electricity Load Shedding in Zimbabwe</h3>
+    <p>Designed a system to monitor and manage power distribution efficiently during load shedding, improving energy utilization.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: lastgaraiza2003@gmail.com</p>
+  <button onclick="showMessage()">Say Hello</button>
+  <p id="msg"></p>
+</section>
+
+<footer>
+  <p>© 2026 Last Garaiza | All Rights Reserved</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  // Button interaction
+  function showMessage() {
+    document.getElementById("msg").innerText = "Thanks for visiting my portfolio!";
+  }
+
+  // Scroll animation
+  const cards = document.querySelectorAll('.card');
+
+  window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        card.classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
